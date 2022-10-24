@@ -7,17 +7,15 @@ let email = document.getElementById('InputEmail');
 let outEmail = document.getElementById('OutEmail');
 
 // Definisco il gruppo di mail accettate
-// let members = ["pertamarco@mail.com","lucalioni@mail.com","marcellobo@mail.com","paolono@mail.com","andreasi@mail.com"]
+let members = ["pertamarco@mail.com","lucalioni@mail.com","marcellobo@mail.com","paolono@mail.com","andreasi@mail.com"]
+console.log(members)
 
- function GetAnswer(){
+function GetAnswer(){
   let emailValue = email.value
   console.log(emailValue)
 
-  let members = ["pertamarco@mail.com","lucalioni@mail.com","marcellobo@mail.com","paolono@mail.com","andreasi@mail.com"]
-
-
   for(let i=0; i> members.length ; i++){
-    if (i===members.length){
+    if (emailValue===members[i]){
         console.log('la mail è presente nella lista')
         outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
         // outEmail.innerHTML.style.color = 'red'
