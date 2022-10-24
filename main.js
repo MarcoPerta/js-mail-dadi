@@ -17,14 +17,21 @@ function GetAnswer(){
   
 
   for(let i=0; i < members.length ; i++){
-    if (emailValue===members[i]){
-        console.log('la mail è presente nella lista')
-        outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
-        elementoDaTrovare = true;
-    }
+    // if (emailValue===members[i]){
+    //     console.log('la mail è presente nella lista')
+    //     outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
+    //     elementoDaTrovare = true;
+    // }
+    if (members[i]===emailValue){
+      console.log('la mail è presente nella lista')
+      outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
+      return i;  
+      return -1;
+    }  
     else {
         console.log('la mail non è presente nella lista')
         outEmail.innerHTML = `la mail : ${emailValue} non è presente nella lista` 
+        // elementoDaTrovare = false;
     }
   }  
 }
