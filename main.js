@@ -37,6 +37,10 @@ let pcnumber = document.getElementById('inputPcNumber')
 let btncube = document.getElementById('btncube');
 btncube.addEventListener("click", getWinner);
 
+let playerWinCount = 0;
+let pcWincCount = 0;
+let winPlayer = document.getElementById("playerCount");
+let winPc = document.getElementById("pcCount");
 
 function getWinner(){
 
@@ -53,12 +57,19 @@ function getWinner(){
     if (plnumberrandom > pcnumberrandom){
         outWinner.innerHTML = 'The winner is the player' 
         console.count("playervincitore");
+        playerWinCount = playerWinCount + 1;
+        winPlayer.innerHTML = `Player winner's n°: ${playerWinCount}`
     }
-    else{
+    else if(plnumberrandom < pcnumberrandom){
         outWinner.innerHTML = 'The winner is pc' 
         console.count("pcvincitore"); 
+        pcWincCount = pcWincCount + 1;
+        winPc.innerHTML = `Pc winner's n°: ${pcWincCount}`
+        
     }
-    // else (plnumberrandom == pcnumberrandom){
-    //     outWinner.innerHTML = 'This is a draw'
-    // }
+    else {
+        outWinner.innerHTML = 'This is a draw'
+        winPc.innerHTML = ''
+        winPlayer.innerHTML = ''
+    }
 }
