@@ -14,7 +14,7 @@ console.log(members)
 function GetAnswer(){
   let emailValue = email.value
   console.log(emailValue)
-//   let elementoDaTrovare = false;
+  let elementoDaTrovare = false;
   
   // ciclo for concatenato con l'array
   for(let i=0; i < members.length ; i++){
@@ -25,16 +25,24 @@ function GetAnswer(){
     // }
     if (members[i]===emailValue){
       console.log('la mail è presente nella lista')
-      outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
-      return i;  
-      return -1;
+      // outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
+      // return i;  
+      // return -1;
+      elementoDaTrovare = true;
     }  
-    else {
-        console.log('la mail non è presente nella lista')
-        outEmail.innerHTML = `la mail : ${emailValue} non è presente nella lista` 
-        // elementoDaTrovare = false;
-    }
-  }  
+    // else {
+    //     console.log('la mail non è presente nella lista')
+    //     outEmail.innerHTML = `la mail : ${emailValue} non è presente nella lista` 
+    //     // elementoDaTrovare = false;
+    // }
+  }
+  
+  if(elementoDaTrovare===true){
+    outEmail.innerHTML = `la mail : ${emailValue} può accedere` 
+  }
+  else{
+    outEmail.innerHTML = 'ISCRIVITI ORA!'
+  }
 }
 
 
