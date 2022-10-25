@@ -10,12 +10,13 @@ let outEmail = document.getElementById('outEmail');
 let members = ["pertamarco@mail.com","lucalioni@mail.com","marcellobo@mail.com","paolono@mail.com","andreasi@mail.com"]
 console.log(members)
 
+// funzione per ottenere risposta
 function GetAnswer(){
   let emailValue = email.value
   console.log(emailValue)
-  let elementoDaTrovare = false;
+//   let elementoDaTrovare = false;
   
-
+  // ciclo for concatenato con l'array
   for(let i=0; i < members.length ; i++){
     // if (emailValue===members[i]){
     //     console.log('la mail è presente nella lista')
@@ -38,6 +39,7 @@ function GetAnswer(){
 
 
 // ===================================================
+// dichiarazioni variabili
 let playernumber = document.getElementById('inputPlayerNumber')
 let pcnumber = document.getElementById('inputPcNumber')
 
@@ -50,7 +52,7 @@ let winPlayer = document.getElementById("playerCount");
 let winPc = document.getElementById("pcCount");
 
 function getWinner(){
-
+    // creazione numeri randomici
     let plnumberrandom = Math.round(Math.random()*6)+1;
     console.log(plnumberrandom)
     let pcnumberrandom = Math.round(Math.random()*6)+1;
@@ -60,13 +62,15 @@ function getWinner(){
     console.log(playernumber)
     pcnumber.innerHTML = `${pcnumberrandom}`
     console.log(pcnumber)
-
+    
+    // caso vincita player con conteggio vittorie
     if (plnumberrandom > pcnumberrandom){
         outWinner.innerHTML = 'The winner is the player' 
         console.count("playervincitore");
         playerWinCount = playerWinCount + 1;
         winPlayer.innerHTML = `Player winner's n°: ${playerWinCount}`
     }
+    // caso vincita pc con conteggio vittorie
     else if(plnumberrandom < pcnumberrandom){
         outWinner.innerHTML = 'The winner is pc' 
         console.count("pcvincitore"); 
@@ -74,6 +78,7 @@ function getWinner(){
         winPc.innerHTML = `Pc winner's n°: ${pcWincCount}`
         
     }
+    // pareggio
     else {
         outWinner.innerHTML = 'This is a draw'
         winPc.innerHTML = ''
